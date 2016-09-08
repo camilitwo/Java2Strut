@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum.scale=1.0">
+	    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.blue-pink.min.css">
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main_style.css">
+        <link rel="stylesheet" href="css/perfil_style.css">
+  	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+      <!--
+	    <script src="js/clientAPI.js"></script>
+	    <script src="js/maps.js"></script> -->
+        <script src="js/validaciones.js"></script>
+    </head>
+<body>
+
+<!-- Modal -->
+<div id="cdf" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div id="modal-mensaje" class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 id="mensaje" class="modal-title">Mensaje</h4>
+      </div>
+      <div class="modal-body">
+          <form role="form">
+          <div class="form-group">
+              <textarea class="form-control" rows="3" placeholder="escriba su mensaje aqui"></textarea>
+          </div>
+          <button id="btnMensaje" type="submit" class="btn btn-default">Enviar
+              <span class="glyphicon glyphicon-send"></span>
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="btnCerrarMensaje" type="button" class="btn btn-default" data-dismiss="modal">Cerrar Mensaje</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+    
+    
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Rapid&iacuten Espol</span>
+
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+      <div id="followers-btn" data-toggle="modal" data-target="#myModal_Seguidores" class="icon material-icons" onclick="seguidores();" >people</div>
+      <div class="mdl-tooltip" for="followers-btn">Seguidores</div>
+      <div id="walking" onclick="location.href='walk.html'" class="icon material-icons">directions_run</div>
+      <div class="mdl-tooltip"  for="walking">No tengo carro...</div>
+      <div id="driving" onclick="location.href='main.html'" class="icon material-icons">directions_car</div>
+      <div class="mdl-tooltip" for="driving">Ando en carro...</div>
+      <div id="miPerfil" class="icon material-icons" onclick="perfil();">account_circle</div>
+      <div class="mdl-tooltip" for="miPerfil">Mi Perfil</div>
+      </nav>
+    </div>
+  </header>
+  <div  class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Rapid&iacuten Espol</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="perfil.html">Perfil</a>
+      <a class="mdl-navigation__link" href="walk.html">No tengo carro</a>
+      <a class="mdl-navigation__link" href="main.html">Ando en carro</a>
+      <a class="mdl-navigation__link" href="main_seguidores.html">Seguidores</a>
+      <a class="mdl-navigation__link" href="main_siguiendo.html">Siguiendo</a>
+      <a class="mdl-navigation__link" href="Login.jsp">Cerrar Sesi&oacuten</a>
+    </nav>
+  </div>
+
+
+  
+<main class="mdl-layout__content">
+
+    <div class="page-content">
+		<!--Google Map -->
+		<!-- perfil usuario/seguidor-->
+        <div id="perfil" class="columna" style="height: 50%;width: 40%;">
+            <div class="row">
+                <div id="imagenPerfil" class=" col-xs-12 text-center">
+                    <div>
+                        <img alt="Imagen Perfil" id="imaUser" src="#"  class="img-responsive center-block img-circle text-center">
+                    </div>
+
+                    <div id="labelSeguidores-Siguiendo" style="padding:10px;">
+                        <button id="btnEditar" type="button" class="btn btn-default" onclick="ocultaBoton();">Editar
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        </button>
+                        <button id="editarFoto" type="button" class="btn btn-default" >Cambiar Foto
+                            <span class="glyphicon glyphicon-open" aria-hidden="true"></span>
+                        </button>
+                        <hr>
+                        <div  class="text-center"><label id="labelSeguidores" ></label></div>
+                        <div  class="text-center"><label id="labelSiguiendo" ></label></div>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-xs-12 text-center center-block">
+                <form id="formularioPerfil" class="form-horizontal" name="formularioContacto">
+                    <div class="form-group">
+                        <div id="nombrePerfil" class="col-xs-12 text-center">
+                            <!-- label nombre -->
+                            <label id="labelNombre" class="block-center control-label "></label>
+                        </div>
+                        <div class="col-xs-offset-4 col-md-4  ">
+                            <input id="inputNombre" type="text" class="form-control " name="nombre" placeholder="Nombre" style='display:none;'>
+                            <p>
+                                <span id="msmErrorNombre" style="color:blue"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12 text-center">
+                            <!-- labek apellido -->
+                            <label id="apellidoPerfil" class="block-center control-label "></label>
+                        </div>
+                        <div class="col-xs-offset-4 col-md-4">
+                            <input id="inputApellido" type="text" class="form-control" name="apellidoPerfil"  placeholder="Apellido" style='display:none;' >
+                            <p>
+                                <span id="msmErrorApellido" style="color:blue"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div id="divCarroPerfil" class="col-xs-12 text-center block-center">
+                            <label id="carroPerfil" class="block-center  control-label "></label>
+                        </div>
+
+                        <div id="input-Carro" class="radio col-xs-offset-4 col-md-4" style='display:none;'>
+                            <label  class=" ">
+                                <input id="rbTengo" type="radio" name="optionsRadios"  value="Si" checked onclick="validarTengoCarro();"> Tengo Carro
+                            </label>
+                            <label class="">
+                                <input id="rbNoTengo" type="radio" name="optionsRadios" value="No" onclick="validarNoTengoCarro();"> No tengo Carro
+                            </label>
+                        </div>
+
+                    </div>
+                    <div id="input-Placa" class="form-group">
+                        <div class="col-xs-12 text-center">
+                          <!--placa perfil -->
+                            <label id="input-placa-Perfil" class="block-center control-label "></label>
+                        </div>
+                        <div class="col-xs-offset-4 col-md-4">
+                            <input id="inputPlaca" type="text" class="form-control" placeholder=" ejemplo : GEU-000" style='display:none;' onkeyup="validarPlaca();">
+                            <p>
+                                <span id="msmError" style="color:blue"></span>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+          			<div id="guardar" class="form-group">
+          				<div class="col-offset-5 col-md-8 col-lg-12 center-block">
+          					<input id="btnCancelar" type="reset" class="btn btn-danger text-center" value="Cancelar" onclick="ocultaCancelar();">
+          					<input id="btnGuardar" type="button" class="btn btn-primary" value="Guardar">
+          				</div>
+          			</div>
+                    <div id="divSuccess" class="alert alert-success alert-dismissable" style="display: none;">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true"> &times;</button>
+                        Se ha guardado sus datos exitosamente
+                    </div>
+          </form>
+			</div>
+		</div>
+        <nav id="rutas-nav" class="columna">
+            <div id="div-rutas-nav">
+                
+            <div id="rutaPerfil" class="text-center">
+                <p><span class="glyphicon glyphicon-map-marker">
+                </span>Mis Rutas</p>
+            </div>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="misRutas" data-name="Casa">
+                    <a href="#">
+                        <div class="row">
+                            <div class="text-left col-md-3">
+                                <img alt="Imagen GoogleMaps" id=""  class="img-responsive img-circle" src="img/icon.png" > 
+                            </div>
+                            <div class="text-center col-md-9">
+                                <span>ESPOL - PUERTO MORO</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <hr>
+                <li>
+                    <a href="#">
+                        <div class="row">
+                            <div class="text-left col-md-3">
+                                <img alt="Imagen GoogleMaps" id=""  class="img-responsive img-circle" src="img/icon.png" > 
+                            </div>
+                            <div class="text-center col-md-9">
+                                <span>ESPOL - FIEC</dt>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <hr>
+            </ul>
+
+            </div>
+        </nav>
+
+        <nav id="rutas-nav" class="columna">
+            <div id="rutaSeguidores" class="text-center">
+                <p><span class="glyphicon glyphicon-map-marker">
+                </span>Rutas de mis Seguidores</p>
+            </div>
+            <ul id="listaSeguidoresRutas" class="nav nav-pills nav-stacked">
+                
+            </ul>
+        </nav>
+	</div>
+
+    
+    </main>
+</div>
+</body>
+</html>

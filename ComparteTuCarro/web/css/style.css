@@ -1,0 +1,605 @@
+/* Stylesheet: A-Dedo 3.0
+ * Author: Alejandro Figueroa
+ * Year: 2014
+*/
+/* SKIN */
+/* Imágenes */
+/* GENERAL */
+body {
+  color: #6c6c6c;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #0dab9b;
+}
+img {
+  max-width: 100%;
+}
+span {
+  color: #0dab9b;
+}
+/* HEADER */
+header,
+#fondo-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+header {
+  padding: 20px;
+  color: white;
+  z-index: 30;
+}
+header .contenedor-header {
+  margin-top: -5px;
+  min-height: 120px;
+  background-image: url('../img/logo_header_landing_mod.png');
+/*  ok*/
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+}
+header .contenedor-header-scroll {
+  background-image: url('../img/logo_header_interior_mod.png');
+/*  ok*/
+}
+#fondo-header {
+  background: #0dab9b;
+  z-index: 20;
+  padding: 45px;
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+nav ul li,
+.nav-footer ul li {
+  color: #888;
+  display: inline-block;
+  list-style-type: none;
+  text-decoration: none;
+  margin-top: 10px;
+  padding: 0 10px;
+  border-right: 1px solid #004737;
+}
+nav ul li a,
+.nav-footer ul li a {
+  color: #0dab9b;
+  text-align: right;
+}
+nav ul {
+  float: right;
+}
+.nav-footer {
+  text-align: center;
+}
+.nav-footer ul {
+  padding-left: 0;
+  display: inline-block;
+}
+.nav-footer ul li {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.nav-footer ul li a {
+  color: white;
+}
+nav ul :last-child {
+  border-right: none;
+}
+.nav-blanco {
+  color: white;
+}
+/* CONTENT */
+.container-featured {
+  padding-top: 100px;
+  width: 100%;
+  display: block;
+  height: 500px;
+  text-align: center;
+  
+  
+}
+
+.container-featured {
+  padding-top: 100px;
+  width: 100%;
+  display: block;
+  height: 500px;
+  text-align: center;
+  color: #843534;
+  
+}
+.featured-app {
+  background-image: url('../img/featured_app.png');
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100%;
+}
+.featured-descarga {
+  position: relative;
+  margin-top: 310px;
+  z-index: 1;
+  text-align: center;
+}
+.featured-descarga span {
+  font-size: 12px;
+  color: white;
+}
+.container-featured-bg {
+  width: 100%;
+  height: 550px;
+  background-image: url('../img/adedo_desktop_bg_1_Ues.jpg');
+  background-position: 50% 0%;
+  text-align: center;
+  z-index: -1;
+}
+.container-featured-bg-A {
+  width: 100%;
+  height: 550px;
+  background-position: 50% 0%;
+  text-align: center;
+  z-index: -1;
+  background-image: url('../img/adedo_desktop_bg_1_Ues.jpg');
+}
+.container-featured-bg-B {
+  width: 100%;
+  height: 550px;
+  background-image: url('../img/adedo_desktop_bg_1_Ues.jpg');
+  background-position: 50% 0%;
+  text-align: center;
+  z-index: -1;
+  background-image: url('../img/adedo_desktop_bg_2.jpg');
+}
+.container-featured-bg-C {
+  width: 100%;
+  height: 550px;
+  background-image: url('../img/adedo_desktop_bg_1_Ues.jpg');
+  background-position: 50% 0%;
+  text-align: center;
+  z-index: -1;
+  background-image: url('../img/adedo_desktop_bg_3.jpg');
+}
+.container-featured-bg-D {
+  width: 100%;
+  height: 550px;
+  background-image: url('../img/adedo_desktop_bg_1_Ues.jpg');
+  background-position: 50% 0%;
+  text-align: center;
+  z-index: -1;
+  background-image: url('../img/adedo_desktop_bg_4.jpg');
+}
+.container-bloque {
+  text-align: center;
+  background: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
+}
+.container-bloque a {
+  color: #0dab9b;
+}
+.container-bloque p {
+  margin-bottom: 15px;
+}
+.container-propuesta {
+  padding-top: 10px;
+}
+.container-propuesta a {
+  display: block;
+  line-height: 1.3em;
+}
+.container-atributos,
+.container-somos {
+  background: #CFEAF3;
+}
+.container-funcionamiento p,
+.container-testimonios p,
+.container-faq p,
+.container-somos p {
+  text-align: left;
+}
+.container-somos h3 {
+  text-align: left;
+}
+.container-testimonios {
+  background: #CFEAF3;
+}
+.container-testimonios h3 {
+  color: "@colorUno";
+}
+.container-testimonios p {
+  color: black;
+}
+.container-faq .col-md-4 h5 {
+  text-align: right;
+  margin-top: 0px;
+}
+.container-conversion {
+  position: relative;
+  height: 400px;
+  margin-bottom: 5px;
+}
+.container-conversion .conversion-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background: url('../img/adedo_desktop_3A.jpg');
+  background-position: 50% 50%;
+}
+.container-conversion .featured-descarga {
+  margin-top: 0px;
+}
+/* FOOTER */
+footer {
+  background: #0dab9b;
+  position: abolute;
+  width: 100%;
+  min-height: 80px;
+  padding: 20px;
+}
+footer p {
+  color: white;
+}
+footer p a {
+  color: white;
+  text-decoration: underline;
+}
+.contenedor-footer {
+  margin-top: -5px;
+  min-height: 60px;
+  background-image: url('../img/logo_header_interior_mod.png'); 
+/*  ok*/
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+}
+/* COMPONENTES */
+.carousel {
+  position: relative;
+}
+.carousel .carousel-inner {
+  position: absolute;
+}
+.carousel .carousel-inner .item-texto {
+  width: 100%;
+  text-align: center;
+  float: left;
+}
+.carousel .carousel-inner .item-texto h2 {
+  color: #555;
+  display: inline-block;
+  width: 600px;
+  margin-top: 138px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.3em;
+}
+.carousel .control-carousel {
+  position: relative;
+  padding-top: 140px;
+}
+.carousel .control-carousel .carousel-indicators {
+  bottom: 0;
+}
+.carousel .control-carousel .carousel-control {
+  background-image: none;
+  top: -70px;
+  z-index: 20;
+}
+.carousel .control-carousel .carousel-control img {
+  position: absolute;
+  top: 45%;
+}
+.carousel .control-carousel .carousel-control.right {
+  right: 15px;
+}
+#ic-nav {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -14px;
+  right: -10px;
+  background-image: url('../img/icono_nav.png');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.img-app {
+  width: 100%;
+  min-height: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.img-ios {
+  width: 100%;
+  min-height: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url('../img/img_banner_ios.png');
+}
+.img-android {
+  width: 100%;
+  min-height: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url('../img/img_banner_android.png');
+}
+.icono-atributo {
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-atributo-simple {
+  background: url('../img/icono_atributo_simple.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-atributo-seguro {
+  background: url('../img/icono_atributo_seguro.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-atributo-todos {
+  background: url('../img/icono_atributo_todos.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-testimonio-1 {
+  background: url('../img/icono_testimonio_1.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-beneficio-descontaminar {
+  background: url('../img/web_landing_grafica_b.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-beneficio-conoce-gente {
+  background: url('../img/web_landing_grafica_c.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-beneficio-ahorro {
+  background: url('../img/web_landing_grafica_a.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-testimonio-2 {
+  background: url('../img/icono_testimonio_2.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-testimonio-3 {
+  background: url('../img/icono_testimonio_3.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-conductor {
+  background: url('../img/icono_conductor.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-pasajero {
+  background: url('../img/icono_pasajero.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-ciclista {
+  background: url('../img/icono_ciclista.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+}
+.icono-adedo-equipo {
+  background: url('../img/icono_adedo_equipo.png');
+  width: 100%;
+  height: 250px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 10px 0;
+  margin-top: -10px;
+}
+.icono-facebook {
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  background-image: url('../img/ic_facebook.png');
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+}
+.icono-twitter {
+  display: inline-block;
+  width: 20px;
+  height: 15px;
+  background-image: url('../img/ic_twitter.png');
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+}
+/* RESPONSIVE */
+@media (min-width: 1024px) {
+  .carousel .carousel-inner .item-texto {
+    width: 75%;
+  }
+  .carousel .carousel-inner .item-texto h2 {
+    width: 600px;
+    padding-left: 100px;
+  }
+}
+@media (max-width: 1023px) {
+  .container-featured .featured-descarga {
+    margin-top: 280px;
+  }
+  .container-featured-bg-A,
+  .container-featured-bg-B,
+  .container-featured-bg-C,
+  .container-featured-bg-D {
+    background-position: 37% -90px;
+    height: 490px;
+  }
+  .container-propuesta {
+    margin-top: 20px;
+  }
+  .carousel .control-carousel .carousel-indicators {
+    bottom: -35px;
+  }
+  .featured-descarga {
+    margin-top: 210px;
+  }
+  nav {
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    top: 0;
+    z-index: -1;
+  }
+  nav ul {
+    display: none;
+    width: 100%;
+    padding-left: 0;
+  }
+  nav ul li {
+    background: black;
+    background: rgba(0, 0, 0, 0.9);
+    display: block;
+    border-bottom: 1px solid white;
+    list-style-type: none;
+    text-decoration: none;
+    margin-top: 0;
+    padding: 20px;
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  }
+  nav ul li a {
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 1.1em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  nav ul li:first-child {
+    padding-top: 90px;
+  }
+  .container-faq .col-md-4 h5 {
+    text-align: left;
+    margin-top: 20px;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  #ic-nav {
+    right: 10px;
+    top: 0px;
+  }
+  .container-funcionamiento .funcionamiento-texto {
+    margin-top: 50px;
+  }
+  .carousel .carousel-inner .item-texto h2 {
+    margin-top: 100px;
+    padding-left: 50px;
+  }
+}
+@media (max-width: 767px) {
+  header .contenedor-header {
+    margin-top: -15px;
+    background-image: url('../img/logo_header_landing_mod.png');
+/*    ok*/
+  }
+  header .contenedor-header-scroll {
+    background-image: url('../img/logo_header_interior_mod.png');
+/*    ok*/
+  }
+  #fondo-header {
+    margin: -1px;
+    padding: 28px;
+    height: 65px;
+  }
+  .carousel .carousel-inner .item-texto h2 {
+    width: 280px;
+    margin-top: 90px;
+    font-size: 16px;
+  }
+  .container-conversion {
+    height: 210px;
+  }
+  .container-conversion .conversion-bg {
+    background-size: 1100px;
+  }
+  .container-featured .featured-descarga {
+    background-position: 35% 0px;
+    margin-top: 300px;
+  }
+  .container-featured-bg {
+    background-image: url('../img/adedo_desktop_bg_1_Ues.jpg');
+    background-position: 36% 0%;
+  }
+  .container-featured-bg h1 {
+    font-size: 16px;
+  }
+  .nav-footer ul {
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 10px;
+  }
+  .nav-footer ul li {
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #004737;
+    border-right: none;
+    padding: 15px 0;
+    margin-bottom: 0;
+  }
+  
+  .image{
+      vertical-align:middle;
+  }
+}
+/*# sourceMappingURL=style.css.map */
