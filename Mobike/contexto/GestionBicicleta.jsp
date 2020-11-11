@@ -25,7 +25,7 @@
 	<html:text property="prueba2"></html:text>
 	<html:radio property="opciones" value="opcion 1"></html:radio>
 	<html:radio property="opciones" value="opcion 2"></html:radio>
-	<html:submit onclick="volver()">Probar</html:submit>
+	<html:submit onclick="volver()">Probar 2</html:submit>
 	
 	<table class="table table-striped" style=" width: 50%; overflow: auto;" align="center">
 		<thead>
