@@ -1,5 +1,8 @@
 package com.duoc.mobike.struts.action;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -14,6 +17,7 @@ import org.apache.struts.action.ActionMessage;
 import org.apache.struts.action.ActionMessages;
 import org.apache.struts.actions.DispatchAction;
 
+import com.duoc.mobike.dto.BicicletaDTO;
 import com.duoc.mobike.logica.UtilLogica;
 import com.duoc.mobike.struts.form.GestionBicicletaForm;
 
@@ -34,17 +38,25 @@ public class GestionBicicletaAction extends DispatchAction{
 
 	}// unspecified
 	
-	public ActionForward prueba(ActionMapping mapping,
+	public ActionForward actualizarEstado(ActionMapping mapping,
 			ActionForm aform, HttpServletRequest request,
 			HttpServletResponse response){
 		GestionBicicletaForm formulario = (GestionBicicletaForm)aform;
 		errors.clear();
+		HttpSession session = request.getSession();
 		try {
 			
-			String prueba = formulario.getValorTexto();
-			String prueba2 = formulario.getPrueba2();
-			String opcion = formulario.getOpciones();
-			System.out.println(prueba);
+			String id = request.getParameter("id");
+			String estado = request.getParameter("estado");
+			
+			List<BicicletaDTO> listaBici =  new ArrayList<BicicletaDTO>();
+			listaBici = (List<BicicletaDTO>)session.getAttribute("listaBicicletas");
+			//validacion del estado si es bloqueado -> desbloqueado y lo mismo al reves
+			
+			//validacion para que solo exista una bicicle desbloqueada
+			//for 
+			
+			System.out.println(id + " " + estado);
 
 		} catch (Exception e) {
 			e.printStackTrace();

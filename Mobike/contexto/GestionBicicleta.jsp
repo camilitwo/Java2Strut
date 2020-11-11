@@ -10,22 +10,22 @@
 		document.GestionBicicletaForm.action = "/Mobike/GestionBicicleta.do?do=prueba";
 		document.GestionBicicletaForm.submit();
 	}
+	
+	
+	function actualizarEstado(id, estado){
+		document.GestionBicicletaForm.action = "/Mobike/GestionBicicleta.do?do=actualizarEstado&id="+id+"&estado="+estado;
+		document.GestionBicicletaForm.submit();
+	}
 </script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
 <html:html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Mobike</title>
 </head>
 <body>
-<html:form action="/GestionBicicleta" enctype="multipart/form-data" method="post">	
-
-	<html:text property="valorTexto"></html:text>
-	<html:text property="prueba2"></html:text>
-	<html:radio property="opciones" value="opcion 1"></html:radio>
-	<html:radio property="opciones" value="opcion 2"></html:radio>
-	<html:submit onclick="volver()">Probar 2</html:submit>
+<html:form action="/GestionBicicleta" enctype="multipart/form-data" method="post">
 	
 	<table class="table table-striped" style=" width: 50%; overflow: auto;" align="center">
 		<thead>
@@ -45,12 +45,16 @@
 				</td>
 				<logic:equal name="indice" property="estado" value="BLOQUEADO">
 					<td>
-						<input type="button" value="Desbloquear">
+						<input type="button" value="Desbloquear" 
+						onclick='javascript:actualizarEstado("<bean:write name='indice' property='idBicicleta'/>", 
+						"<bean:write name='indice' property='estado'/>");return false;'>
 					</td>
 				</logic:equal>
 				<logic:equal name="indice" property="estado" value="DESBLOQUEADO">
 					<td>
-						<input type="button" value="Bloquear">
+						<input type="button" value="Bloquear" 
+						onclick='javascript:actualizarEstado("<bean:write name='indice' property='idBicicleta'/>", 
+						"<bean:write name='indice' property='estado'/>");return false;'>
 					</td>
 				</logic:equal>
 			</tr>
