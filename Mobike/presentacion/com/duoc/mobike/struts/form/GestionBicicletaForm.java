@@ -10,6 +10,7 @@ public class GestionBicicletaForm extends org.apache.struts.action.ActionForm {
 	private String valorTexto;
 	private String prueba2;
 	private String opciones;
+	private String alertas;
 	
 	public String getValorTexto() {
 		return valorTexto;
@@ -28,6 +29,12 @@ public class GestionBicicletaForm extends org.apache.struts.action.ActionForm {
 	}
 	public void setOpciones(String opciones) {
 		this.opciones = opciones;
+	}
+	public String getAlertas() {
+		return alertas;
+	}
+	public void setAlertas(String alertas) {
+		this.alertas = alertas;
 	}
 
 }

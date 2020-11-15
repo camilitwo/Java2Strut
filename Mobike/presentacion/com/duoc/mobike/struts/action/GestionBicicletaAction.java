@@ -17,8 +17,9 @@ import org.apache.struts.action.ActionMessage;
 import org.apache.struts.action.ActionMessages;
 import org.apache.struts.actions.DispatchAction;
 
+import com.duoc.mobike.constantes.Constantes;
 import com.duoc.mobike.dto.BicicletaDTO;
-import com.duoc.mobike.logica.UtilLogica;
+import com.duoc.mobike.fachada.BicicletaFachada;
 import com.duoc.mobike.struts.form.GestionBicicletaForm;
 
 public class GestionBicicletaAction extends DispatchAction{
@@ -32,7 +33,8 @@ public class GestionBicicletaAction extends DispatchAction{
 		errors.clear();
 		HttpSession session = request.getSession();
 		
-		session.setAttribute("listaBicicletas", UtilLogica.armarListaBicicleta());
+		//session.setAttribute("listaBicicletas", UtilLogica.armarListaBicicleta());
+		session.setAttribute("listaBicicletas", BicicletaFachada.armarListaBicicleta());
 
 		return mapping.findForward("GestionBicicleta");
 
@@ -55,8 +57,29 @@ public class GestionBicicletaAction extends DispatchAction{
 			
 			//validacion para que solo exista una bicicle desbloqueada
 			//for 
+			int h = 0;
+			formulario.setAlertas("0");
+			if(estado.equals(Constantes.ESTADO_BLOQUEADO)){
+				
+				h++;
+				
+				for (BicicletaDTO bici : listaBici){
+					if (bici.getEstado().equals(Constantes.ESTADO_DESBLOQUEADO)){
+						h++;
+						if (h>1){
+							formulario.setAlertas("1");
+							throw new Exception();
+						}
+					}
+				}
+				
+			}
 			
-			System.out.println(id + " " + estado);
+			
+			
+			BicicletaFachada.actualizarEstadoBicicleta(id, estado);
+			
+			session.setAttribute("listaBicicletas", BicicletaFachada.armarListaBicicleta());
 
 		} catch (Exception e) {
 			e.printStackTrace();

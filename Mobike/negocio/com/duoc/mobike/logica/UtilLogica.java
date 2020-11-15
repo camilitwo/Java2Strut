@@ -21,7 +21,7 @@ public class UtilLogica {
 			BicicletaDTO bicicleta = null;
 			for (int i = 0; i < 16; i++) {
 				bicicleta = new BicicletaDTO();
-				bicicleta.setIdBicicleta(i+1);
+				//bicicleta.setIdBicicleta(i+1);
 				bicicleta.setEstado(Constantes.ESTADO_BLOQUEADO);
 				
 				listaBicicleta.add(bicicleta);
